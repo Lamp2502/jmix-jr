@@ -1,0 +1,18 @@
+@import "../helium/helium";
+
+@mixin jr-theme {
+  @include helium;
+
+.side-meny{
+  position: absolute;
+  left: 0%;
+  right: 83.59%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #FFFFFF;
+
+  /* Frame shadow X */
+  box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
+}
+}
