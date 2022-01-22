@@ -1,14 +1,22 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption">
 
-    <layout>
+    <layout >
+        <cssLayout id="headerFrame1"
+                   stylename="header-frame-1"
+                   align="TOP_RIGHT"
+        >
+            <hbox align="TOP_RIGHT">
+                <button caption="button" align="TOP_RIGHT"/>
+            </hbox>
+        </cssLayout>
+
         <cssLayout id="horizontalWrap"
-                   stylename="jmix-drawer-layout"
-                   height="1080"
-                   width="315">
+                   stylename="side-meny"
+                  height="100%" >
             <drawer id="drawer" expandOnHover="true">
                 <cssLayout id="appTitleBox"
-                           stylename="jmix-drawer-header"
+
                            width="100%">
                     <image id="logoImage"
                            stylename="app-icon"
@@ -27,11 +35,11 @@
                 <timeZoneIndicator id="timeZoneIndicator"
                                    align="MIDDLE_CENTER"/>
                 <cssLayout id="controlBox"
-                           stylename="jmix-drawer-footer"
-                           width="100%">
+
+                           >
                     <button id="collapseDrawerButton"
                             icon="CHEVRON_LEFT"
-                            stylename="jmix-drawer-collapse-button"
+
                             description="msg://sideMenuCollapse"/>
                     <userIndicator id="userIndicator"
                                    align="MIDDLE_CENTER"/>
@@ -40,6 +48,8 @@
                                   description="msg://logoutBtnDescription"/>
                 </cssLayout>
             </drawer>
+
+
             <workArea id="workArea"
                       stylename="jmix-workarea"
                       height="100%">

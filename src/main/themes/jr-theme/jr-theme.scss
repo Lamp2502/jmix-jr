@@ -3,16 +3,31 @@
 @mixin jr-theme {
   @include helium;
 
-.side-meny{
-  position: absolute;
-  left: 0%;
-  right: 83.59%;
-  top: 0%;
-  bottom: 0%;
+  .side-meny{
+    position: absolute;
+    left: 0%;
+    right: 83.59%;
+    top: 0%;
+    bottom: 0%;
 
-  background: #FFFFFF;
+    Width: 315px;
+    Height: 1080px;
 
-  /* Frame shadow X */
-  box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
-}
+    background: #FFFFFF;
+
+    /* Frame shadow X */
+    box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
+  }
+
+  .header-frame-1 {
+   /* position: absolute;*/
+    width: 100%;
+    height: 80px;
+
+/*    left: 20px;
+    top: 20px;*/
+
+    /* Main Blue */
+    background: #00447C;
+  }
 }
