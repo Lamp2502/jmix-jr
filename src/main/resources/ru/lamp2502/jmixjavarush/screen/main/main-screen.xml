@@ -3,36 +3,49 @@
 
     <layout>
         <cssLayout id="headerFrame1" stylename="header-frame-1" width="100%" align="TOP_RIGHT">
-        <hbox width="100%" height="100%" align="MIDDLE_RIGHT">
-            <label value="АО “Выксунский металлургический завод”"
-                   stylename="header-text"
-                   align="MIDDLE_LEFT"/>
-        </hbox>
+            <hbox width="100%" height="100%" align="MIDDLE_RIGHT">
+                <label value="АО “Выксунский металлургический завод”"
+                       stylename="header-text"
+                       align="MIDDLE_LEFT"/>
+            </hbox>
         </cssLayout>
 
         <cssLayout id="horizontalWrap"
                    stylename="side-meny">
 
-                <cssLayout id="appTitleBox"
-                           width="100%">
-                    <image id="logoImage"
-                           stylename="app-icon"
-                           scaleMode="SCALE_DOWN">
-                        <resource>
-                            <theme path="branding/logo.svg"/>
-                        </resource>
-                    </image>
-                </cssLayout>
-                <sideMenu id="sideMenu"
-                          width="100%"
-                          stylename="jmix-drawer-content"/>
-                <cssLayout id="controlBox">
-                    <userIndicator id="userIndicator"
-                                   align="MIDDLE_CENTER"/>
+            <cssLayout id="appTitleBox"
+                       width="100%">
+                <image id="logoImage"
+                       stylename="app-icon"
+                       scaleMode="SCALE_DOWN">
+                    <resource>
+                        <theme path="branding/logo.svg"/>
+                    </resource>
+                </image>
+            </cssLayout>
+            <cssLayout id="controlBox">
+                <vbox>
+                    <fileMultiUpload id="contracts"
+                                     icon="branding/contracts.svg"
+                                     caption="Договоры"/>
+                    <fileMultiUpload id="documents"
+                                     icon="branding/documents.svg"
+                                     caption="Документы"/>
+                    <fileMultiUpload id="tasks"
+                                     icon="branding/tasks.svg"
+                                     caption="Задачи"/>
+                    <fileMultiUpload id="reports"
+                                     icon="branding/reports.svg"
+                                     caption="Отчёты"/>
                     <logoutButton id="logoutButton"
                                   icon="SIGN_OUT"
+                                  caption="Выход"
                                   description="msg://logoutBtnDescription"/>
-                </cssLayout>
+                    <userIndicator id="userIndicator"
+                                   align="MIDDLE_CENTER"/>
+                </vbox>
+
+            </cssLayout>
         </cssLayout>
         <workArea id="workArea"
                   stylename="jmix-workarea"
