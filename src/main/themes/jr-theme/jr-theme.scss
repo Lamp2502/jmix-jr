@@ -4,30 +4,54 @@
   @include helium;
 
   .side-meny{
-    position: absolute;
-    left: 0%;
+    /*position: absolute;*/
+    position: fixed;
+    top: 0;
+  /*  left: 0%;
     right: 83.59%;
     top: 0%;
-    bottom: 0%;
-
+    bottom: 0%;*/
     Width: 315px;
-    Height: 1080px;
-
+    Height: 1605px;
     background: #FFFFFF;
-
     /* Frame shadow X */
-    box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
+/*    box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);*/
   }
 
   .header-frame-1 {
-   /* position: absolute;*/
+    /*position: absolute;*/
+    position: fixed;
     width: 100%;
     height: 80px;
-
-/*    left: 20px;
-    top: 20px;*/
+ /*   right: 315px;*/
+    left: 315px;
+    /*top: 20px;*/
 
     /* Main Blue */
     background: #00447C;
+  }
+
+  .header-text{
+    /* АО “Выксунский металлургический завод” */
+
+    position: absolute;
+    width: 683px;
+    height: 22px;
+    left: 20px;
+    top: calc(50% - 22px/2);
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 120%;
+
+    /* identical to box height, or 22px */
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* White */
+    color: #FFFFFF;
   }
 }

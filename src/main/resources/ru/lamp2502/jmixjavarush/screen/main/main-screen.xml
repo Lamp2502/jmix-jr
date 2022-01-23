@@ -1,20 +1,19 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption">
 
-    <layout >
-        <cssLayout id="headerFrame1"
-                   stylename="header-frame-1"
-                   align="TOP_RIGHT"
-        >
-            <hbox align="TOP_RIGHT">
-                <button caption="button" align="TOP_RIGHT"/>
-            </hbox>
+    <layout>
+        <cssLayout id="headerFrame1" stylename="header-frame-1" width="100%" align="TOP_RIGHT">
+        <hbox width="100%" height="100%" align="MIDDLE_RIGHT">
+            <label value="АО “Выксунский металлургический завод”"
+                   stylename="header-text"
+
+                   align="MIDDLE_LEFT"/>
+        </hbox>
         </cssLayout>
 
         <cssLayout id="horizontalWrap"
-                   stylename="side-meny"
-                  height="100%" >
-            <drawer id="drawer" expandOnHover="true">
+                   stylename="side-meny">
+
                 <cssLayout id="appTitleBox"
 
                            width="100%">
@@ -22,12 +21,9 @@
                            stylename="app-icon"
                            scaleMode="SCALE_DOWN">
                         <resource>
-                            <theme path="branding/app-icon-menu.svg"/>
+                            <theme path="branding/logo.svg"/>
                         </resource>
                     </image>
-                    <label id="appTitleLabel"
-                           stylename="app-title"
-                           value="msg://application.logoLabel"/>
                 </cssLayout>
                 <sideMenu id="sideMenu"
                           width="100%"
@@ -36,7 +32,7 @@
                                    align="MIDDLE_CENTER"/>
                 <cssLayout id="controlBox"
 
-                           >
+                >
                     <button id="collapseDrawerButton"
                             icon="CHEVRON_LEFT"
 
@@ -47,7 +43,7 @@
                                   icon="SIGN_OUT"
                                   description="msg://logoutBtnDescription"/>
                 </cssLayout>
-            </drawer>
+
 
 
             <workArea id="workArea"
