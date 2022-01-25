@@ -3,16 +3,16 @@
 @mixin jr-theme {
   @include helium;
 
-  .side-meny{
+  .side-meny {
     /*position: absolute;*/
     position: fixed;
     top: 0;
-  /*  left: 0%;
-    right: 83.59%;
-    top: 0%;
-    bottom: 0%;*/
+    /*  left: 0%;
+      right: 83.59%;
+      top: 0%;
+      bottom: 0%;*/
     Width: 315px;
-    Height: 1605px;
+    Height: 100%;
     background: #FFFFFF;
     /* Frame shadow X */
     box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
@@ -24,7 +24,7 @@
     position: fixed;
     width: 100%;
     height: 80px;
- /*   right: 315px;*/
+    /*   right: 315px;*/
     left: 315px;
     /*top: 20px;*/
 
@@ -32,13 +32,13 @@
     background: #00447C;
   }
 
-  .header-text{
+  .header-text {
     /* АО “Выксунский металлургический завод” */
     position: absolute;
     width: 683px;
     height: 22px;
     left: 20px;
-    top: calc(50% - 22px/2);
+    top: calc(50% - 22px / 2);
     font-family: Arial;
     font-style: normal;
     font-weight: bold;
@@ -52,12 +52,51 @@
     color: #FFFFFF;
   }
 
-  header-avatar{
+  header-avatar {
     /* Avatar */
     position: absolute;
     width: 56px;
     height: 56px;
     right: 0px;
-    top: calc(50% - 56px/2);
+    top: calc(50% - 56px / 2);
+  }
+
+  .work-area {
+    position: fixed;
+    width: 100%;
+    height: 1600px;
+    left: 315px;
+    /* Gray Background */
+    background: #EFEFEF;
+  }
+
+  .side-meny-contract-button {
+    /* кнопки */
+    border: none;
+    /*position: static;*/
+    width: 95px;
+    height: 24px;
+    left: 20px;
+    top: calc(50% - 24px / 2);
+    font-family: Arial;
+
+
+/*    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+   !* line-height: 135%;*!
+    !* or 24px *!
+    display: flex;
+    align-items: center;
+    !* Black *!
+    color: #212121;*/
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 16px;
+    color: #212121;
   }
 }
