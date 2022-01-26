@@ -5,7 +5,7 @@
 
   .side-meny {
     /*position: absolute;*/
-    position: fixed;
+    position: absolute;
     top: 0;
     /*  left: 0%;
       right: 83.59%;
@@ -62,15 +62,17 @@
   }
 
   .work-area {
-    position: fixed;
-    left: 315px;
+    position: absolute;
     top: 80px;
+    left: 315px;
+    width: calc(100% - 315px);
+    height: calc(100% - 80px);
     /* Gray Background */
     background: #EFEFEF;
   }
 
   .initial-layout {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
   }
