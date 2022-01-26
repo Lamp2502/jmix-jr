@@ -1,10 +1,20 @@
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://application.caption">
+        caption="msg://application.caption"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition">
     <data>
         <instance id="userDc"
                   class="ru.lamp2502.jmixjavarush.entity.User">
             <fetchPlan extends="_base"/>
-            <loader/>
+            <loader id="userDl">
+                <query>
+                    <![CDATA[select e from User e]]>
+                    <condition>
+                        <c:jpql>
+                            <c:where>e.username like :username</c:where>
+                        </c:jpql>
+                    </condition>
+                </query>
+            </loader>
         </instance>
     </data>
     <actions>
@@ -20,8 +30,6 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <dialogMode height="600"
-                width="800"/>
 
     <layout>
         <cssLayout id="headerFrame1"
@@ -40,18 +48,15 @@
                            scaleMode="SCALE_DOWN"
                            alternateText="фото не установлено"
                            align="MIDDLE_RIGHT"
-                    >
-                        <resource>
-                            <theme path="branding/photo-person.png"/>
-                        </resource>
+                           dataContainer="userDc"
+                           property="image">
+
                     </image>
                 </cssLayout>
             </hbox>
         </cssLayout>
 
-        <cssLayout id="horizontalWrap"
-                   stylename="side-meny">
-
+        <cssLayout id="horizontalWrap" stylename="side-meny">
             <cssLayout id="appTitleBox"
                        width="100%">
                 <image id="logoImage"
@@ -62,7 +67,7 @@
                     </resource>
                 </image>
             </cssLayout>
-            <cssLayout id="controlBox">
+            <cssLayout id="controlBox" height="100%">
                 <vbox id="boxOfButtons" spacing="true">
                     <linkButton id="contracts"
                                 stylename="side-meny-contract-button"
@@ -85,34 +90,29 @@
                                   icon="SIGN_OUT"
                                   caption="Выход"
                                   description="msg://logoutBtnDescription"/>
-                    <userIndicator id="userIndicator"
-                                   align="MIDDLE_CENTER"/>
+
+                    <userIndicator id="userIndicator"/>
+                    <sideMenu id="sideMenu"
+                              width="100%"
+                              stylename="jmix-drawer-content"/>
                 </vbox>
             </cssLayout>
 
+
             <workArea id="workArea"
                       stylename="work-area"
-                      width="100%" height="1600">
-                <initialLayout spacing="true" margin="true"
-                               stylename="work-area">
+                      width="100%" height="100%">
+
+                <initialLayout spacing="true" margin="true" stylename="work-area"
+                               expand="editActions1">
                     <form id="form" dataContainer="userDc">
                         <column width="350px">
+                            <fileStorageUpload id="fileField" property="image"/>
+                            <image id="image" property="image" width="50%" height="50%"/>
                             <textField id="usernameField" property="username" editable="false"/>
-                            <passwordField id="passwordField"
-                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password"
-                                           required="true"
-                                           visible="false"/>
-                            <passwordField id="confirmPasswordField"
-                                           caption="msg://confirmPassword"
-                                           required="true"
-                                           visible="false"/>
-                            <textField id="firstNameField" property="firstName"/>
-                            <textField id="lastNameField" property="lastName"/>
-                            <textField id="emailField" property="email"/>
-
                         </column>
                     </form>
-                    <hbox id="editActions" spacing="true">
+                    <hbox id="editActions1" spacing="true">
                         <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
                         <button id="closeBtn" action="windowClose"/>
                     </hbox>

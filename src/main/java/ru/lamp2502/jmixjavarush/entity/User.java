@@ -58,14 +58,19 @@ public class User implements JmixUserDetails, HasTimeZone {
     @Column(name = "TIME_ZONE_ID")
     protected String timeZoneId;
 
-    @PropertyDatatype("fileRef")
     @Column(name = "IMAGE")
-    protected FileRef image;
+    private FileRef image;
+
+    public FileRef getImage() {
+        return image;
+    }
+
+    public void setImage(FileRef image) {
+        this.image = image;
+    }
 
     @Transient
     protected Collection<? extends GrantedAuthority> authorities;
-
-    public FileRef getImage() {return image;}
 
     public UUID getId() {
         return id;
@@ -88,7 +93,7 @@ public class User implements JmixUserDetails, HasTimeZone {
     }
 
     @Override
-    public String getUsername() {
+public String getUsername() {
         return username;
     }
 

@@ -21,7 +21,7 @@
 
   .header-frame-1 {
     /*position: absolute;*/
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 80px;
     /*   right: 315px;*/
@@ -63,11 +63,16 @@
 
   .work-area {
     position: fixed;
-    width: 100%;
-    height: 1600px;
     left: 315px;
+    top: 80px;
     /* Gray Background */
     background: #EFEFEF;
+  }
+
+  .initial-layout {
+    position: fixed;
+    width: 100%;
+    height: 100%;
   }
 
   .side-meny-contract-button {
@@ -81,21 +86,29 @@
     font-family: Arial;
 
 
-/*    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-   !* line-height: 135%;*!
-    !* or 24px *!
-    display: flex;
-    align-items: center;
-    !* Black *!
-    color: #212121;*/
+    /*    font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+       !* line-height: 135%;*!
+        !* or 24px *!
+        display: flex;
+        align-items: center;
+        !* Black *!
+        color: #212121;*/
 
     /* Inside auto layout */
     flex: none;
     order: 1;
     flex-grow: 0;
+    margin: 8px 16px;
+    color: #212121;
+  }
+
+  .lower-button {
+    position: absolute;
+    bottom: 100px;
+
     margin: 8px 16px;
     color: #212121;
   }

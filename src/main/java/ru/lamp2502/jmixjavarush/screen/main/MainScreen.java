@@ -5,7 +5,10 @@ import io.jmix.ui.component.AppWorkArea;
 import io.jmix.ui.component.Button;
 import io.jmix.ui.component.Window;
 import io.jmix.ui.component.mainwindow.Drawer;
+import io.jmix.ui.download.DownloadFormat;
+import io.jmix.ui.download.Downloader;
 import io.jmix.ui.icon.JmixIcon;
+import io.jmix.ui.model.InstanceContainer;
 import io.jmix.ui.navigation.Route;
 import io.jmix.ui.screen.Screen;
 import io.jmix.ui.screen.Subscribe;
@@ -13,6 +16,7 @@ import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiControllerUtils;
 import io.jmix.ui.screen.UiDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.lamp2502.jmixjavarush.entity.User;
 
 @UiController("MainScreen")
 @UiDescriptor("main-screen.xml")
@@ -52,4 +56,7 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
         screenTools.handleRedirect();
     }
+
+
+
 }
