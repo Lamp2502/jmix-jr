@@ -34,26 +34,19 @@
     <layout>
         <cssLayout id="mainLayoutMainMeny" width="100%" height="100%">
             <cssLayout id="headerFrame1"
-                       stylename="header-frame-1"
-                       align="TOP_RIGHT">
-                <hbox width="100%" height="100%" align="MIDDLE_RIGHT">
+                       stylename="header-frame-1">
+                <hbox width="100%" height="100%">
                     <label value="АО “Выксунский металлургический завод”"
-                           stylename="header-text"
-                           align="MIDDLE_LEFT"/>
+                           stylename="header-text" align="MIDDLE_LEFT"/>
 
-                    <cssLayout id="avatar" stylename="header-avatar"
-                               align="MIDDLE_RIGHT">
-                        <image id="fileRefImage"
-                               stylename="header-avatar"
-                               css="width: 56px; height: 56px;"
-                               scaleMode="SCALE_DOWN"
-                               alternateText="фото не установлено"
-                               align="MIDDLE_RIGHT"
-                               dataContainer="userDc"
-                               property="image">
-
-                        </image>
-                    </cssLayout>
+                    <image id="fileRefImage"
+                           stylename="header-avatar"
+                           css="width:56px; height:56px; top:calc(50%-56px/2); right:122px;"
+                           scaleMode="SCALE_DOWN"
+                           alternateText="фото не установлено"
+                           dataContainer="userDc"
+                           property="image" align="MIDDLE_RIGHT">
+                    </image>
                 </hbox>
             </cssLayout>
 
@@ -92,28 +85,34 @@
                                       caption="Выход"
                                       description="msg://logoutBtnDescription"/>
 
-                        <userIndicator id="userIndicator"/>
-                        <sideMenu id="sideMenu"
-                                  width="100%"
-                                  stylename="jmix-drawer-content"/>
+                        <cssLayout id="adminPanel" stylename="lower-button">
+                            <userIndicator id="userIndicator"/>
+                            <sideMenu id="sideMenu"
+                                      width="100%"/>
+                        </cssLayout>
                     </vbox>
                 </cssLayout>
             </cssLayout>
 
             <workArea id="workArea" stylename="work-area">
-                <initialLayout spacing="true" margin="true" stylename="initial-layout"
-                               expand="editActions1">
-                    <form id="form" dataContainer="userDc">
+                <initialLayout spacing="true" margin="true" >
+                    <cssLayout stylename="photo-on-work-area" css="background: #FFFFFF;">
+
+                        <image id="image" dataContainer="userDc" property="image"
+                               align="MIDDLE_LEFT" css="background: #EFEFEF; position:absolute; top:48px; left:40px;"/>
+                    </cssLayout>
+
+                    <form id="form" dataContainer="userDc" css="position: absolute; top:240px; left:40px">
                         <column width="350px">
-                            <fileStorageUpload id="fileField" property="image"/>
-                            <image id="image" property="image" width="50%" height="50%"/>
+                            <textField id="cellphoneField" property="cellphone" editable="true"/>
+                            <textField id="emailField" property="email" editable="true"/>
+                            <textField id="workphoneField" property="workphone" editable="true"/>
                             <textField id="usernameField" property="username" editable="false"/>
+                            <passwordField id="passwordField"
+                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
+                                           visible="false"/>
                         </column>
                     </form>
-                    <hbox id="editActions1" spacing="true" >
-                        <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
-                        <button id="closeBtn" action="windowClose"/>
-                    </hbox>
                 </initialLayout>
             </workArea>
         </cssLayout>

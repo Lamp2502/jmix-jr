@@ -52,7 +52,12 @@
                 <column id="username"/>
                 <column id="firstName"/>
                 <column id="lastName"/>
+                <column id="patronymic"/>
                 <column id="email"/>
+                <column id="cellphone"/>
+                <column id="workphone"/>
+                <column id="position"/>
+                <column id="workplace"/>
                 <column id="timeZoneId"/>
                 <column id="active"/>
             </columns>

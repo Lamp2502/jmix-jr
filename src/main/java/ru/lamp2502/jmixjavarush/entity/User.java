@@ -8,7 +8,6 @@ import io.jmix.core.entity.annotation.SystemLevel;
 import io.jmix.core.metamodel.annotation.DependsOnProperties;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
-import io.jmix.core.metamodel.annotation.PropertyDatatype;
 import io.jmix.security.authentication.JmixUserDetails;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -48,9 +47,24 @@ public class User implements JmixUserDetails, HasTimeZone {
     @Column(name = "LAST_NAME")
     protected String lastName;
 
+    @Column(name = "PATRONYMIC")
+    private String patronymic;
+
     @Email
     @Column(name = "EMAIL")
     protected String email;
+
+    @Column(name = "CELLPHONE")
+    private String cellphone;
+
+    @Column(name = "WORKPHONE")
+    private String workphone;
+
+    @Column(name = "POSITION_")
+    private String position;
+
+    @Column(name = "WORKPLACE")
+    private String workplace;
 
     @Column(name = "ACTIVE")
     protected Boolean active = true;
@@ -71,6 +85,26 @@ public class User implements JmixUserDetails, HasTimeZone {
 
     @Transient
     protected Collection<? extends GrantedAuthority> authorities;
+
+    public String getPatronymic() {return patronymic;}
+
+    public void setPatronymic(String patronymic) {this.patronymic = patronymic;}
+
+    public String getWorkphone() {return workphone;}
+
+    public void setWorkphone(String workphone) {this.workphone = workphone;}
+
+    public String getCellphone() {return cellphone;}
+
+    public void setCellphone(String cellphone) {this.cellphone = cellphone;}
+
+    public String getWorkplace() {return workplace;}
+
+    public void setWorkplace(String workplace) {this.workplace = workplace;}
+
+    public String getPosition() {return position;}
+
+    public void setPosition(String position) {this.position = position;}
 
     public UUID getId() {
         return id;

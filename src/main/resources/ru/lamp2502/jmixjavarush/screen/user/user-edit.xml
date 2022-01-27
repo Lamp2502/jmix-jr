@@ -40,7 +40,12 @@
                                visible="false"/>
                 <textField id="firstNameField" property="firstName"/>
                 <textField id="lastNameField" property="lastName"/>
+                <textField id="patronymicField" property="patronymic"/>
                 <textField id="emailField" property="email"/>
+                <textField id="cellphoneField" property="cellphone"/>
+                <textField id="workphoneField" property="workphone"/>
+                <textField id="positionField" property="position"/>
+                <textField id="workplaceField" property="workplace"/>
                 <comboBox id="timeZoneField" property="timeZoneId"/>
                 <checkBox id="activeField" property="active"/>
 

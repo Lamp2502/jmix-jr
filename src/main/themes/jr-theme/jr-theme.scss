@@ -4,29 +4,21 @@
   @include helium;
 
   .side-meny {
-    /*position: absolute;*/
     position: absolute;
     top: 0;
-    /*  left: 0%;
-      right: 83.59%;
-      top: 0%;
-      bottom: 0%;*/
     Width: 315px;
     Height: 100%;
     background: #FFFFFF;
+
     /* Frame shadow X */
     box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
-
   }
 
   .header-frame-1 {
-    /*position: absolute;*/
     position: absolute;
-    width: 100%;
+    width: calc(100% - 315px);
     height: 80px;
-    /*   right: 315px;*/
     left: 315px;
-    /*top: 20px;*/
 
     /* Main Blue */
     background: #00447C;
@@ -53,11 +45,12 @@
   }
 
   header-avatar {
+    /*css="width:56px; height:56px; top:calc(50%-56px/2); right:122px;"*/
     /* Avatar */
-    position: absolute;
+    /*position: absolute;*/
     width: 56px;
     height: 56px;
-    right: 0px;
+    right: 25px;
     top: calc(50% - 56px / 2);
   }
 
@@ -65,17 +58,28 @@
     position: absolute;
     top: 80px;
     left: 315px;
-    width: calc(100% - 315px);
-    height: calc(100% - 80px);
+    bottom: 0;
+    right: 0;
+    /*    width: calc(100% - 315px);
+        height: calc(100% - 80px);*/
     /* Gray Background */
     background: #EFEFEF;
   }
 
-  .initial-layout {
+  .photo-on-work-area {
     position: absolute;
+    height: 215px;
     width: 100%;
-    height: 100%;
+    background: #FFFFFF;
+
+    /*background: #EFEFEF;*/
   }
+
+
+  /*  .control-box {
+      position: absolute;
+      top: 126px;
+    }*/
 
   .side-meny-contract-button {
     /* кнопки */
