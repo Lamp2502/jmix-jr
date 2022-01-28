@@ -1,7 +1,7 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
->
+        focusComponent="form">
     <data>
         <instance id="userDc"
                   class="ru.lamp2502.jmixjavarush.entity.User">
@@ -95,18 +95,31 @@
                 </cssLayout>
             </cssLayout>
 
-                <workArea id="workArea"
-                           >
-                    <initialLayout spacing="true" margin="true" stylename="work-area">
-                        <image id="titul_1" scaleMode="SCALE_DOWN"
-                               align="MIDDLE_CENTER">
-                            <resource>
-                                <theme path="branding/titul_1.svg"/>
-                            </resource>
-                        </image>
-                    </initialLayout>
-                </workArea>
+            <workArea id="workArea" stylename="work-area">
+                <initialLayout spacing="true" margin="true" >
+                    <cssLayout stylename="photo-on-work-area" css="background: #FFFFFF;">
 
+                        <image id="image" dataContainer="userDc" property="image"
+                               align="MIDDLE_LEFT" css="background: #EFEFEF; position:absolute; top:48px; left:40px;"/>
+                    </cssLayout>
+
+                    <form id="form" dataContainer="userDc" css="position: absolute; top:240px; left:40px">
+                        <column width="350px">
+                            <textField id="cellphoneField" property="cellphone" />
+                            <textField id="emailField" property="email" />
+                            <textField id="workphoneField" property="workphone" />
+                            <textField id="usernameField" property="username" editable="false"/>
+                            <passwordField id="passwordField"
+                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
+                                           visible="false"/>
+                        </column>
+                    </form>
+                    <hbox id="editActions" spacing="true">
+                        <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+                        <button id="closeBtn" action="windowClose"/>
+                    </hbox>
+                </initialLayout>
+            </workArea>
         </cssLayout>
     </layout>
 </window>
