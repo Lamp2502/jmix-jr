@@ -7,14 +7,7 @@
                   class="ru.lamp2502.jmixjavarush.entity.User">
             <fetchPlan extends="_base"/>
             <loader id="userDl">
-                <query>
-                    <![CDATA[select e from User e]]>
-                    <condition>
-                        <c:jpql>
-                            <c:where>e.username like :username</c:where>
-                        </c:jpql>
-                    </condition>
-                </query>
+
             </loader>
         </instance>
     </data>
@@ -36,34 +29,33 @@
         <cssLayout id="mainLayoutMainMeny" width="100%" height="100%">
             <cssLayout id="headerFrame1"
                        stylename="header-frame-1">
-                <hbox width="100%" height="100%">
-                    <label value="АО “Выксунский металлургический завод”"
-                           stylename="header-text" align="MIDDLE_LEFT"/>
-
+                <flowBox width="100%" height="100%">
+                    <label id="workPlaceHeader" stylename="work-place-in-header" align="MIDDLE_LEFT"/>
+                    <label id="fioInHeader" stylename="fio-in-header"/>
+                    <label id="workPositionHeader" stylename="work-position-header"/>
                     <image id="fileRefImage"
                            stylename="header-avatar"
-                           css="width:56px; height:56px; top:calc(50%-56px/2); right:122px;"
+                           css="position: absolute; width:56px; height:56px; top:calc(50%-56px/2);
+                           right:12px; top:12px;border-radius: 50%; border: 1px solid #fff;
+                           box-shadow: 2px 1px 5px #999999;"
                            scaleMode="SCALE_DOWN"
                            alternateText="фото не установлено"
                            dataContainer="userDc"
                            property="image" align="MIDDLE_RIGHT">
                     </image>
-                </hbox>
+                </flowBox>
             </cssLayout>
 
             <cssLayout id="horizontalWrap" stylename="side-meny">
-                <cssLayout id="appTitleBox"
-                           width="100%">
-                    <image id="logoImage"
-                           stylename="app-icon"
-                           scaleMode="SCALE_DOWN">
+                <cssLayout id="appTitleBox" width="100%">
+                    <image id="logoImage" stylename="app-icon" scaleMode="SCALE_DOWN">
                         <resource>
                             <theme path="branding/logo.svg"/>
                         </resource>
                     </image>
                 </cssLayout>
                 <cssLayout id="controlBox" height="100%">
-                    <vbox id="boxOfButtons" spacing="true">
+                    <vbox id="boxOfButtons" spacing="true" >
                         <linkButton id="contracts"
                                     stylename="side-meny-contract-button"
                                     icon="branding/contracts.svg"
@@ -95,18 +87,40 @@
                 </cssLayout>
             </cssLayout>
 
-                <workArea id="workArea"
-                           >
-                    <initialLayout spacing="true" margin="true" stylename="work-area">
-                        <image id="titul_1" scaleMode="SCALE_DOWN"
-                               align="MIDDLE_CENTER">
-                            <resource>
-                                <theme path="branding/titul_1.svg"/>
-                            </resource>
-                        </image>
-                    </initialLayout>
-                </workArea>
+            <workArea id="workArea" stylename="work-area">
+                <initialLayout spacing="true" margin="true">
+                    <flowBox stylename="photo-on-work-area">
+                        <image id="image" dataContainer="userDc" property="image" align="MIDDLE_LEFT"
+                               scaleMode="SCALE_DOWN"
+                               css="position: absolute; top:48px; left:40px; max-width:125px; max-height:125px;
+                               display: block; border-radius: 50%; border: 2px solid #fff;
+                               box-shadow: 2px 1px 5px #999999;"/>
+                        <label id="fioInMainFon" stylename="fio-in-main-fon"/>
+                        <label id="workplaceInMainFon" stylename="workplace-in-main-fon"
+                               dataContainer="userDc" property="workplace" value="workplace"/>
+                        <label id="positionMainFon" stylename="position-in-main-fon"
+                               dataContainer="userDc" property="position"/>
+                    </flowBox>
 
+                    <form id="form" dataContainer="userDc" css="position: absolute; top:240px; left:40px">
+                        <column width="350px">
+                            <textField id="firstNameField" property="firstName"/>
+                            <textField id="lastNameField" property="lastName"/>
+                            <textField id="cellphoneField" property="cellphone"/>
+                            <textField id="emailField" property="email"/>
+                            <textField id="workphoneField" property="workphone"/>
+                            <textField id="usernameField" property="username" editable="false"/>
+                            <passwordField id="passwordField"
+                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
+                                           visible="false"/>
+                        </column>
+                    </form>
+                    <hbox id="editActions" spacing="true" css="position: absolute; top:550px; left:40px">
+                        <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+                        <button id="closeBtn" action="windowClose"/>
+                    </hbox>
+                </initialLayout>
+            </workArea>
         </cssLayout>
     </layout>
 </window>
