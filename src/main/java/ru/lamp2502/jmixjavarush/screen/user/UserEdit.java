@@ -76,4 +76,68 @@ public class UserEdit extends StandardEditor<User> {
     public void onInit(InitEvent event) {
         timeZoneField.setOptionsList(Arrays.asList(TimeZone.getAvailableIDs()));
     }
+
+    public EntityStates getEntityStates() {
+        return entityStates;
+    }
+
+    public void setEntityStates(EntityStates entityStates) {
+        this.entityStates = entityStates;
+    }
+
+    public PasswordEncoder getPasswordEncoder() {
+        return passwordEncoder;
+    }
+
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    public PasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public void setPasswordField(PasswordField passwordField) {
+        this.passwordField = passwordField;
+    }
+
+    public TextField<String> getUsernameField() {
+        return usernameField;
+    }
+
+    public void setUsernameField(TextField<String> usernameField) {
+        this.usernameField = usernameField;
+    }
+
+    public PasswordField getConfirmPasswordField() {
+        return confirmPasswordField;
+    }
+
+    public void setConfirmPasswordField(PasswordField confirmPasswordField) {
+        this.confirmPasswordField = confirmPasswordField;
+    }
+
+    public Notifications getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Notifications notifications) {
+        this.notifications = notifications;
+    }
+
+    public MessageBundle getMessageBundle() {
+        return messageBundle;
+    }
+
+    public void setMessageBundle(MessageBundle messageBundle) {
+        this.messageBundle = messageBundle;
+    }
+
+    public ComboBox<String> getTimeZoneField() {
+        return timeZoneField;
+    }
+
+    public void setTimeZoneField(ComboBox<String> timeZoneField) {
+        this.timeZoneField = timeZoneField;
+    }
 }

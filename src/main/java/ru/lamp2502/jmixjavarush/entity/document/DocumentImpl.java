@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.entity;
+package ru.lamp2502.jmixjavarush.entity.document;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.InstanceName;
@@ -12,9 +12,9 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "DEFECTS_IDENTIFICATION_ACT")
+@Table(name = "DOCUMENTS")
 @Entity
-public class DefectsIdentificationAct implements Document {
+public class DocumentImpl implements ru.lamp2502.jmixjavarush.entity.document.Document {
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id

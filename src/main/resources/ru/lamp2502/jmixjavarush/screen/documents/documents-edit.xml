@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://defectsIdentificationActEdit.caption"
+        caption="msg://documentsEdit.caption"
         focusComponent="form">
     <data>
         <instance id="defectsIdentificationActDc"
-                  class="ru.lamp2502.jmixjavarush.entity.DefectsIdentificationAct">
+                  class="ru.lamp2502.jmixjavarush.entity.DocumentImpl">
             <fetchPlan extends="_base"/>
             <loader/>
         </instance>

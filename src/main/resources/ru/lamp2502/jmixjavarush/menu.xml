@@ -4,8 +4,7 @@
     <menu id="application" caption="msg://ru.lamp2502.jmixjavarush/menu.application" insertBefore="administration">
         <item screen="User.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.user/UserBrowse.caption"/>
         <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
-        <item screen="DefectsIdentificationAct.browse"
-              caption="msg://ru.lamp2502.jmixjavarush.screen.defectsidentificationact/defectsIdentificationActBrowse.menu"/>
+        <item screen="Documents.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.documents/DocumentsBrowse.meny"/>
     </menu>
 
 </menu-config>

@@ -33,7 +33,7 @@
                 <passwordField id="passwordField"
                                caption="msg://ru.lamp2502.jmixjavarush.entity/User.password"
                                required="true"
-                               visible="false"/>
+                               visible="true"/>
                 <passwordField id="confirmPasswordField"
                                caption="msg://confirmPassword"
                                required="true"

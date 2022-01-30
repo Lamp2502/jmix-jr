@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://defectsIdentificationActBrowse.caption"
+        caption="msg://documentsBrowse.caption"
         focusComponent="defectsIdentificationActsTable">
     <data readOnly="true">
         <collection id="defectsIdentificationActsDc"
-                    class="ru.lamp2502.jmixjavarush.entity.DefectsIdentificationAct">
+                    class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
             <fetchPlan extends="_base"/>
             <loader id="defectsIdentificationActsDl">
                 <query>
-                    <![CDATA[select e from DefectsIdentificationAct e]]>
+                    <![CDATA[select e from DocumentImpl e]]>
                 </query>
             </loader>
         </collection>
