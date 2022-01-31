@@ -3,9 +3,11 @@
         caption="msg://documentsEdit.caption"
         focusComponent="form">
     <data>
-        <instance id="defectsIdentificationActDc"
-                  class="ru.lamp2502.jmixjavarush.entity.DocumentImpl">
-            <fetchPlan extends="_base"/>
+        <instance id="documentDc"
+                  class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+            <fetchPlan extends="_base">
+                <property name="user" fetchPlan="_base"/>
+            </fetchPlan>
             <loader/>
         </instance>
     </data>
@@ -25,11 +27,20 @@
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true" expand="editActions">
-        <form id="form" dataContainer="defectsIdentificationActDc">
+        <form id="form" dataContainer="documentDc">
             <column width="350px">
                 <textField id="hatField" property="hat"/>
                 <textField id="titleField" property="title"/>
                 <textField id="bodyField" property="body"/>
+                <entityPicker id="managerField" property="user">
+                    <actions>
+                        <action id="entityLookup" type="entity_lookup"/>
+                        <action id="entityClear" type="entity_clear"/>
+                        <action id="points"
+                                icon="QUESTION"
+                                description="knowPoints"/>
+                    </actions>
+                </entityPicker>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

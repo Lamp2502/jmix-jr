@@ -1,15 +1,31 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption"
-        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
->
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition">
     <data>
-        <instance id="userDc"
-                  class="ru.lamp2502.jmixjavarush.entity.User">
+        <instance id="userDc" class="ru.lamp2502.jmixjavarush.entity.User">
             <fetchPlan extends="_base"/>
-            <loader id="userDl">
-
-            </loader>
+            <loader id="userDl"/>
         </instance>
+        <instance id="documentDc" class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+            <fetchPlan extends="_base"/>
+            <loader id="documentDl"/>
+        </instance>
+        <collection id="usersDc" class="ru.lamp2502.jmixjavarush.entity.User">
+            <fetchPlan extends="_base"/>
+            <loader id="usersDl">
+                <query>
+                    <![CDATA[select e from User e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="documentsDc" class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+            <fetchPlan extends="_base"/>
+            <loader id="documentsDl">
+                <query>
+                    <![CDATA[select e from DocumentImpl e]]>
+                </query>
+            </loader>
+        </collection>
     </data>
     <actions>
         <action id="windowCommitAndClose"
@@ -27,8 +43,7 @@
 
     <layout>
         <cssLayout id="mainLayoutMainMeny" width="100%" height="100%">
-            <cssLayout id="headerFrame1"
-                       stylename="header-frame-1">
+            <cssLayout id="headerFrame1" stylename="header-frame-1">
                 <flowBox width="100%" height="100%">
                     <label id="workPlaceHeader" stylename="work-place-in-header" align="MIDDLE_LEFT"/>
                     <label id="fioInHeader" stylename="fio-in-header"/>
@@ -55,7 +70,8 @@
                     </image>
                 </cssLayout>
                 <cssLayout id="controlBox" height="100%">
-                    <vbox id="boxOfButtons" spacing="true" >
+                    <vbox id="boxOfButtons" spacing="true">
+
                         <linkButton id="contracts"
                                     stylename="side-meny-contract-button"
                                     icon="branding/contracts.svg"
@@ -88,7 +104,7 @@
             </cssLayout>
 
             <workArea id="workArea" stylename="work-area">
-                <initialLayout spacing="true" margin="true">
+                <initialLayout spacing="true" margin="true" expand="editActions">
                     <flowBox stylename="photo-on-work-area">
                         <image id="image" dataContainer="userDc" property="image" align="MIDDLE_LEFT"
                                scaleMode="SCALE_DOWN"
@@ -110,7 +126,9 @@
                             <textField id="emailField" property="email"/>
                             <textField id="workphoneField" property="workphone"/>
                             <textField id="usernameField" property="username" editable="false"/>
-                            <passwordField id="passwordField" caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true" visible="false"/>
+                            <passwordField id="passwordField"
+                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
+                                           visible="false"/>
                             <passwordField id="confirmPasswordField" caption="msg://confirmPassword"
                                            required="true" visible="false"/>
                         </column>

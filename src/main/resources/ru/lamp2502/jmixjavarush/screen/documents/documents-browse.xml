@@ -2,12 +2,12 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
         caption="msg://documentsBrowse.caption"
-        focusComponent="defectsIdentificationActsTable">
+        focusComponent="documentsTable">
     <data readOnly="true">
-        <collection id="defectsIdentificationActsDc"
+        <collection id="documentsDc"
                     class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
             <fetchPlan extends="_base"/>
-            <loader id="defectsIdentificationActsDl">
+            <loader id="documentsDl">
                 <query>
                     <![CDATA[select e from DocumentImpl e]]>
                 </query>
@@ -30,14 +30,14 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="defectsIdentificationActsTable" spacing="true">
+    <layout expand="documentsTable" spacing="true">
         <filter id="filter"
-                dataLoader="defectsIdentificationActsDl">
+                dataLoader="documentsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="defectsIdentificationActsTable"
+        <groupTable id="documentsTable"
                     width="100%"
-                    dataContainer="defectsIdentificationActsDc">
+                    dataContainer="documentsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
@@ -51,9 +51,9 @@
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="defectsIdentificationActsTable.create"/>
-                <button id="editBtn" action="defectsIdentificationActsTable.edit"/>
-                <button id="removeBtn" action="defectsIdentificationActsTable.remove"/>
+                <button id="createBtn" action="documentsTable.create"/>
+                <button id="editBtn" action="documentsTable.edit"/>
+                <button id="removeBtn" action="documentsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

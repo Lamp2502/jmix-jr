@@ -6,8 +6,11 @@ import io.jmix.core.LoadContext;
 import io.jmix.core.metamodel.model.impl.MetaClassImpl;
 import io.jmix.core.querycondition.PropertyCondition;
 import io.jmix.core.usersubstitution.CurrentUserSubstitution;
+import io.jmix.ui.Notifications;
 import io.jmix.ui.ScreenTools;
 import io.jmix.ui.UiComponents;
+import io.jmix.ui.action.Action;
+import io.jmix.ui.action.list.AddAction;
 import io.jmix.ui.component.*;
 import io.jmix.ui.component.mainwindow.Drawer;
 import io.jmix.ui.download.DownloadFormat;
@@ -21,7 +24,9 @@ import liquibase.pro.packaged.S;
 import liquibase.pro.packaged.U;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.lamp2502.jmixjavarush.entity.User;
+import ru.lamp2502.jmixjavarush.screen.user.UserBrowse;
 
+import javax.inject.Named;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -67,8 +72,13 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
     @Autowired
     private Label<String> workPlaceHeader;
 
-
     private LoadContext<User> loadContext;
+
+
+    @Autowired
+    private Notifications notifications;
+
+
 
 
     @Install(to = "userDl", target = Target.DATA_LOADER)
