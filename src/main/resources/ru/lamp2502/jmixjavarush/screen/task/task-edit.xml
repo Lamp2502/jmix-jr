@@ -46,6 +46,7 @@
                 </entityPicker>
                 <comboBox id="actionsField" property="actions"/>
                 <comboBox id="statusField" property="status"/>
+                <checkBox id="completedField" property="completed"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

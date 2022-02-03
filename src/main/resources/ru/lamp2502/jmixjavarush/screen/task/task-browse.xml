@@ -2,17 +2,29 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
         caption="msg://taskBrowse.caption"
-        focusComponent="tasksTable">
+        focusComponent="tasksTableSheet">
     <data readOnly="true">
-        <collection id="tasksDc"
+        <collection id="tasksDcCompleted"
                     class="ru.lamp2502.jmixjavarush.entity.Task">
             <fetchPlan extends="_base">
                 <property name="document" fetchPlan="_base"/>
                 <property name="administrator" fetchPlan="_base"/>
             </fetchPlan>
-            <loader id="tasksDl">
+            <loader id="tasksDlCompleted">
                 <query>
-                    <![CDATA[select e from Task_ e]]>
+                    <![CDATA[select e from Task_ e where e.completed=true ]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="tasksDcOpened"
+                    class="ru.lamp2502.jmixjavarush.entity.Task">
+            <fetchPlan extends="_base">
+                <property name="document" fetchPlan="_base"/>
+                <property name="administrator" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="tasksDlOpened">
+                <query>
+                    <![CDATA[select e from Task_ e where e.completed=false ]]>
                 </query>
             </loader>
         </collection>
@@ -33,40 +45,77 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="tasksTable" spacing="true">
+    <layout expand="tasksTableSheet" spacing="true">
         <filter id="filter"
-                dataLoader="tasksDl">
+                dataLoader="tasksDlOpened">
             <properties include=".*"/>
         </filter>
-        <groupTable id="tasksTable"
-                    width="100%"
-                    dataContainer="tasksDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="refresh" type="refresh"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="performBefore"/>
-                <column id="document"/>
-                <column id="contragent"/>
-                <column id="administrator"/>
-                <column id="actions"/>
-                <column id="status"/>
-            </columns>
-            <simplePagination/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="tasksTable.create"/>
-                <button id="editBtn" action="tasksTable.edit"/>
-                <button id="refreshBtn" action="tasksTable.refresh"/>
-                <button id="removeBtn" action="tasksTable.remove"/>
-            </buttonsPanel>
-        </groupTable>
-        <hbox id="lookupActions" spacing="true" visible="false">
-            <button action="lookupSelectAction"/>
-            <button action="lookupCancelAction"/>
-        </hbox>
+
+        <tabSheet id="tasksTableSheet">
+            <tab id="tasksOpened" expand="tasksTableOpened">
+                <groupTable id="tasksTableOpened"
+                            width="100%"
+                            dataContainer="tasksDcOpened">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="refresh" type="refresh"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="performBefore"/>
+                        <column id="document"/>
+                        <column id="contragent"/>
+                        <column id="administrator"/>
+                        <column id="actions"/>
+                        <column id="status"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel_1"
+                                  alwaysVisible="true">
+                        <button id="createBtn_1" action="tasksTableOpened.create"/>
+                        <button id="editBtn_1" action="tasksTableOpened.edit"/>
+                        <button id="refreshBtn_1" action="tasksTableOpened.refresh"/>
+                        <button id="removeBtn_1" action="tasksTableOpened.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions_1" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </tab>
+            <tab id="tasksCompleted" expand="tasksTableCompleted">
+                <groupTable id="tasksTableCompleted"
+                            width="100%"
+                            dataContainer="tasksDcCompleted">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="refresh" type="refresh"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="performBefore"/>
+                        <column id="document"/>
+                        <column id="contragent"/>
+                        <column id="administrator"/>
+                        <column id="actions"/>
+                        <column id="status"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel_2"
+                                  alwaysVisible="true">
+                        <button id="createBtn_2" action="tasksTableCompleted.create"/>
+                        <button id="editBtn_2" action="tasksTableCompleted.edit"/>
+                        <button id="refreshBtn_2" action="tasksTableCompleted.refresh"/>
+                        <button id="removeBtn_2" action="tasksTableCompleted.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions_2" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </tab>
+        </tabSheet>
     </layout>
 </window>

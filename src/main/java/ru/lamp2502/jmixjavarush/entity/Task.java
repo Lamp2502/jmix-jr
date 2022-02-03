@@ -68,6 +68,13 @@ public class Task {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDate;
 
+    @Column(name = "COMPLETED")
+    private Boolean completed = false;
+
+    public Boolean getCompleted() {return completed;}
+
+    public void setCompleted(Boolean completed) {this.completed = completed;}
+
     public Contract getDocument() {return document;}
 
     public void setDocument(Contract document) {this.document = document;}
