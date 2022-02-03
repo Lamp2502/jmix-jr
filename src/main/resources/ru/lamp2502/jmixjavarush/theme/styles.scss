@@ -1,0 +1,8 @@
+@import "jr-theme-defaults";
+@import "addons";
+@import "jr-theme";
+
+.jr-theme {
+  @include addons;
+  @include jr-theme;
+}

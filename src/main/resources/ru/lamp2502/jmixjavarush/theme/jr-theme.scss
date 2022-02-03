@@ -1,0 +1,238 @@
+@import "../helium/helium";
+
+@mixin jr-theme {
+  @include helium;
+
+  .side-meny {
+    position: absolute;
+    top: 0;
+    Width: 315px;
+    Height: 100%;
+    background: #FFFFFF;
+
+    /* Frame shadow X */
+    box-shadow: 3px 0px 5px rgba(33, 33, 33, 0.08);
+  }
+
+  .header-frame-1 {
+    position: absolute;
+    width: calc(100% - 315px);
+    height: 80px;
+    left: 315px;
+
+    /* Main Blue */
+    background: #00447C;
+  }
+
+  .work-place-in-header {
+    /* АО “Выксунский металлургический завод” */
+    position: absolute;
+    width: 683px;
+    height: 22px;
+    left: 20px;
+    top: calc(50% - 22px / 2);
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 120%;
+    /* identical to box height, or 22px */
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    /* White */
+    color: #FFFFFF;
+  }
+
+  header-avatar {
+    /*css="width:56px; height:56px; top:calc(50%-56px/2); right:122px;"*/
+    /* Avatar */
+    /*position: absolute;*/
+ /*   width: 56px;
+    height: 56px;
+    right: 25px;
+    top: calc(50% - 56px / 2);
+    border-radius: 50%;  !* Скругление углов изображения *!
+    border: 5px solid #fff; !* Цвет и ширину рамки *!
+    box-shadow: 2px 1px 5px #999999; !* Цвет и размер тени *!*/
+  }
+
+  .work-area {
+    position: absolute;
+    top: 80px;
+    left: 315px;
+    bottom: 0;
+    right: 0;
+    /*    width: calc(100% - 315px);
+        height: calc(100% - 80px);*/
+    /* Gray Background */
+    background: #EFEFEF;
+  }
+
+  .photo-on-work-area {
+   /* position: absolute;*/
+/*    height: 125px;
+    width: 125px;*/
+
+
+
+  /*  border-radius: 50%;  !* Скругление углов изображения *!
+    border: 5px solid #fff; !* Цвет и ширину рамки *!
+    box-shadow: 2px 1px 5px #999999; !* Цвет и размер тени *!*/
+    /*background: #EFEFEF;*/
+  }
+
+
+  /*  .control-box {
+      position: absolute;
+      top: 126px;
+    }*/
+
+  .side-meny-contract-button {
+    /* кнопки */
+    border: none;
+    /*position: static;*/
+    width: 95px;
+    height: 24px;
+    left: 20px;
+    top: calc(50% - 24px / 2);
+    font-family: Arial;
+
+    /*    font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+       !* line-height: 135%;*!
+        !* or 24px *!
+        display: flex;
+        align-items: center;
+        !* Black *!
+        color: #212121;*/
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 16px;
+    color: #212121;
+  }
+
+  .lower-button {
+    position: absolute;
+    bottom: 100px;
+
+    margin: 8px 16px;
+    color: #212121;
+  }
+
+  .fio-in-header{
+    position: absolute;
+    width: 376px;
+    height: 24px;
+    right: 60px;
+    top: calc(50% - 24px/2 - 8px);
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+
+    /* identical to box height, or 24px */
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    /* White */
+    color: #FFFFFF;
+  }
+
+  .work-position-header{
+    position: absolute;
+    width: 68px;
+    height: 17px;
+    right: 138px;
+    /*top: calc(50% - 17px/2 - 12.5px);*/
+    top: 46px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 120%;
+
+    /* identical to box height, or 17px */
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: #CFCFCF;
+  }
+
+  .fio-in-main-fon{
+    position: absolute;
+    width: 788px;
+    height: 48px;
+    left: 181px;
+    top: 58px;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+
+    /* or 38px */
+    display: flex;
+    align-items: center;
+
+    /* Main Blue */
+    color: #00447C;
+  }
+
+  .workplace-in-main-fon{
+    position: absolute;
+    width: 436px;
+    height: 24px;
+    left: 189px;
+    top: 110px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 120%;
+
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* 09090B */
+    color: #09090B;
+  }
+
+  .position-in-main-fon{
+    position: absolute;
+    width: 88px;
+    height: 24px;
+    left: 189px;
+    top: 138px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 135%;
+
+    /* or 24px */
+    display: flex;
+    align-items: center;
+
+    color: #898989;
+  }
+
+  .test{
+    background: #EFEFEF;
+  }
+}

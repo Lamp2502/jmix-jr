@@ -6,7 +6,7 @@
             <fetchPlan extends="_base"/>
             <loader id="userDl"/>
         </instance>
-        <instance id="documentDc" class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+        <instance id="documentDc" class="ru.lamp2502.jmixjavarush.entity.document.Document">
             <fetchPlan extends="_base"/>
             <loader id="documentDl"/>
         </instance>
@@ -18,11 +18,11 @@
                 </query>
             </loader>
         </collection>
-        <collection id="documentsDc" class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+        <collection id="documentsDc" class="ru.lamp2502.jmixjavarush.entity.document.Document">
             <fetchPlan extends="_base"/>
             <loader id="documentsDl">
                 <query>
-                    <![CDATA[select e from DocumentImpl e]]>
+                    <![CDATA[select e from Document e]]>
                 </query>
             </loader>
         </collection>
@@ -45,6 +45,7 @@
         <cssLayout id="mainLayoutMainMeny" width="100%" height="100%">
             <cssLayout id="headerFrame1" stylename="header-frame-1">
                 <flowBox width="100%" height="100%">
+
                     <label id="workPlaceHeader" stylename="work-place-in-header" align="MIDDLE_LEFT"/>
                     <label id="fioInHeader" stylename="fio-in-header"/>
                     <label id="workPositionHeader" stylename="work-position-header"/>
@@ -72,6 +73,7 @@
                 <cssLayout id="controlBox" height="100%">
                     <vbox id="boxOfButtons" spacing="true">
 
+
                         <linkButton id="contracts"
                                     stylename="side-meny-contract-button"
                                     icon="branding/contracts.svg"
@@ -93,7 +95,6 @@
                                       icon="SIGN_OUT"
                                       caption="Выход"
                                       description="msg://logoutBtnDescription"/>
-
                         <cssLayout id="adminPanel" stylename="lower-button">
                             <userIndicator id="userIndicator"/>
                             <sideMenu id="sideMenu"

@@ -17,4 +17,8 @@
       </entry>
     </moduleSettings>
   </component>
+  <component name="JmixLiquibaseChangesConfig">
+    <exclude-change idName="CONTRACT#CUSTOMER" tagName="addNotNullConstraint" />
+    <exclude-change idName="DOCUMENT#CUSTOMER" tagName="addNotNullConstraint" />
+  </component>
 </project>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="jmixjavarush">
+        <createTable tableName="TASK_">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TASK_"/>
+            </column>
+            <column name="PERFORM_BEFORE" type="DATE"/>
+            <column name="DOCUMENT_ID" type="UUID"/>
+            <column name="CONTRAGENT" type="VARCHAR(255)"/>
+            <column name="ADMINISTRATOR_ID" type="UUID"/>
+            <column name="ACTIONS" type="VARCHAR(255)"/>
+            <column name="STATUS" type="VARCHAR(255)"/>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="jmixjavarush">
+        <addForeignKeyConstraint baseColumnNames="ADMINISTRATOR_ID" baseTableName="TASK_"
+                                 constraintName="FK_TASK__ON_ADMINISTRATOR" referencedColumnNames="ID"
+                                 referencedTableName="USER_"/>
+
+        <createIndex indexName="IDX_TASK_ADMINISTRATOR_ID" tableName="TASK_">
+            <column name="ADMINISTRATOR_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="3" author="jmixjavarush">
+        <addForeignKeyConstraint baseColumnNames="DOCUMENT_ID" baseTableName="TASK_"
+                                 constraintName="FK_TASK__ON_DOCUMENT" referencedColumnNames="ID"
+                                 referencedTableName="DOCUMENT"/>
+
+        <createIndex indexName="IDX_TASK_DOCUMENT_ID" tableName="TASK_">
+            <column name="DOCUMENT_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="4" author="jmixjavarush">
+        <dropColumn columnName="BODY_" tableName="CONTRACT"/>
+
+        <dropColumn columnName="CREATED_BY" tableName="CONTRACT"/>
+
+        <dropColumn columnName="CREATED_DATE" tableName="CONTRACT"/>
+
+        <dropColumn columnName="CUSTOMER" tableName="CONTRACT"/>
+
+        <dropColumn columnName="HAT" tableName="CONTRACT"/>
+
+        <dropColumn columnName="LAST_MODIFIED_BY" tableName="CONTRACT"/>
+
+        <dropColumn columnName="LAST_MODIFIED_DATE" tableName="CONTRACT"/>
+
+        <dropColumn columnName="NUMBER_" tableName="CONTRACT"/>
+
+        <dropColumn columnName="PERFORMER" tableName="CONTRACT"/>
+
+        <dropColumn columnName="STATUS" tableName="CONTRACT"/>
+
+        <dropColumn columnName="TITEL" tableName="CONTRACT"/>
+    </changeSet>
+    <changeSet id="5" author="jmixjavarush">
+        <dropColumn columnName="BODY_" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="CREATED_BY" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="CREATED_DATE" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="CUSTOMER" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="HAT" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="LAST_MODIFIED_BY" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="LAST_MODIFIED_DATE" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="NUMBER_" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="PERFORMER" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="STATUS" tableName="DOCUMENT"/>
+
+        <dropColumn columnName="TITEL" tableName="DOCUMENT"/>
+    </changeSet>
+</databaseChangeLog>

@@ -39,7 +39,12 @@
                     dataContainer="usersDc"
                     multiselect="true">
             <actions>
-                <action id="create" type="create"/>
+                <action id="create" type="create">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                        <property name="screenClass" value="ru.lamp2502.jmixjavarush.screen.user.UserEdit"/>
+                    </properties>
+                </action>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
                 <action id="showRoleAssignments" type="showRoleAssignments"/>

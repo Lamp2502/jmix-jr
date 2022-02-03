@@ -1,35 +1,21 @@
 package ru.lamp2502.jmixjavarush.screen.main;
 
 import io.jmix.core.DataManager;
-import io.jmix.core.Id;
 import io.jmix.core.LoadContext;
-import io.jmix.core.metamodel.model.impl.MetaClassImpl;
-import io.jmix.core.querycondition.PropertyCondition;
 import io.jmix.core.usersubstitution.CurrentUserSubstitution;
 import io.jmix.ui.Notifications;
+import io.jmix.ui.ScreenBuilders;
 import io.jmix.ui.ScreenTools;
 import io.jmix.ui.UiComponents;
-import io.jmix.ui.action.Action;
-import io.jmix.ui.action.list.AddAction;
 import io.jmix.ui.component.*;
-import io.jmix.ui.component.mainwindow.Drawer;
-import io.jmix.ui.download.DownloadFormat;
-import io.jmix.ui.download.Downloader;
-import io.jmix.ui.icon.JmixIcon;
 import io.jmix.ui.model.*;
-import io.jmix.ui.model.impl.InstanceContainerImpl;
 import io.jmix.ui.navigation.Route;
 import io.jmix.ui.screen.*;
-import liquibase.pro.packaged.S;
-import liquibase.pro.packaged.U;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.lamp2502.jmixjavarush.entity.User;
-import ru.lamp2502.jmixjavarush.screen.user.UserBrowse;
-
-import javax.inject.Named;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import ru.lamp2502.jmixjavarush.screen.contract.ContractBrowse;
+import ru.lamp2502.jmixjavarush.screen.document.DocumentBrowse;
+import ru.lamp2502.jmixjavarush.screen.task.TaskBrowse;
 
 @UiController("MainScreen")
 @UiDescriptor("main-screen.xml")
@@ -74,11 +60,42 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
 
     private LoadContext<User> loadContext;
 
+    @Autowired
+    private ScreenBuilders screenBuilders;
+
 
     @Autowired
     private Notifications notifications;
 
+/*    @Autowired
+    private Button documents;*/
 
+    @Subscribe("documents")
+    public void onScreenButtonClickForDocuments(Button.ClickEvent event) {
+        screenBuilders.screen(this)
+                .withScreenClass(DocumentBrowse.class)
+                .withOpenMode(OpenMode.THIS_TAB)
+                .build()
+                .show();
+    }
+
+    @Subscribe("contracts")
+    public void onScreenButtonClickForContracts(Button.ClickEvent event) {
+        screenBuilders.screen(this)
+                .withScreenClass(ContractBrowse.class)
+                .withOpenMode(OpenMode.THIS_TAB)
+                .build()
+                .show();
+    }
+
+    @Subscribe("tasks")
+    public void onScreenButtonClickForTasks(Button.ClickEvent event) {
+        screenBuilders.screen(this)
+                .withScreenClass(TaskBrowse.class)
+                .withOpenMode(OpenMode.THIS_TAB)
+                .build()
+                .show();
+    }
 
 
     @Install(to = "userDl", target = Target.DATA_LOADER)

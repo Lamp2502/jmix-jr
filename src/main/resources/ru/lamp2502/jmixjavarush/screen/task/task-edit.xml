@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        caption="msg://documentsEdit.caption"
+        caption="msg://taskEdit.caption"
         focusComponent="form">
     <data>
-        <instance id="documentDc"
-                  class="ru.lamp2502.jmixjavarush.entity.document.DocumentImpl">
+        <instance id="taskDc"
+                  class="ru.lamp2502.jmixjavarush.entity.Task">
             <fetchPlan extends="_base">
-                <property name="user" fetchPlan="_base"/>
+                <property name="document" fetchPlan="_base"/>
+                <property name="administrator" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
         </instance>
@@ -27,20 +28,24 @@
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true" expand="editActions">
-        <form id="form" dataContainer="documentDc">
+        <form id="form" dataContainer="taskDc">
             <column width="350px">
-                <textField id="hatField" property="hat"/>
-                <textField id="titleField" property="title"/>
-                <textField id="bodyField" property="body"/>
-                <entityPicker id="managerField" property="user">
+                <dateField id="performBeforeField" property="performBefore"/>
+                <entityPicker id="documentField" property="document">
                     <actions>
                         <action id="entityLookup" type="entity_lookup"/>
                         <action id="entityClear" type="entity_clear"/>
-                        <action id="points"
-                                icon="QUESTION"
-                                description="knowPoints"/>
                     </actions>
                 </entityPicker>
+                <comboBox id="contragentField" property="contragent"/>
+                <entityPicker id="administratorField" property="administrator">
+                    <actions>
+                        <action id="entityLookup" type="entity_lookup"/>
+                        <action id="entityClear" type="entity_clear"/>
+                    </actions>
+                </entityPicker>
+                <comboBox id="actionsField" property="actions"/>
+                <comboBox id="statusField" property="status"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
