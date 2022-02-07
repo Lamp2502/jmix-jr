@@ -46,13 +46,13 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="tasksTableSheet" spacing="true">
-        <filter id="filter"
+        <filter id="filter" caption="msg://filter"
                 dataLoader="tasksDlOpened">
             <properties include=".*"/>
         </filter>
 
         <tabSheet id="tasksTableSheet">
-            <tab id="tasksOpened" expand="tasksTableOpened">
+            <tab id="tasksOpened" expand="tasksTableOpened" caption="msg://opened">
                 <groupTable id="tasksTableOpened"
                             width="100%"
                             dataContainer="tasksDcOpened">
@@ -71,12 +71,11 @@
                         <column id="status"/>
                     </columns>
                     <simplePagination/>
-                    <buttonsPanel id="buttonsPanel_1"
-                                  alwaysVisible="true">
-                        <button id="createBtn_1" action="tasksTableOpened.create"/>
-                        <button id="editBtn_1" action="tasksTableOpened.edit"/>
-                        <button id="refreshBtn_1" action="tasksTableOpened.refresh"/>
-                        <button id="removeBtn_1" action="tasksTableOpened.remove"/>
+                    <buttonsPanel id="buttonsPanel_1" alwaysVisible="true">
+                        <button id="createBtn_1" action="tasksTableOpened.create" caption="msg://create"/>
+                        <button id="editBtn_1" action="tasksTableOpened.edit" caption="msg://edit"/>
+                        <button id="refreshBtn_1" action="tasksTableOpened.refresh" caption="msg://refresh"/>
+                        <button id="removeBtn_1" action="tasksTableOpened.remove" caption="msg://remove"/>
                     </buttonsPanel>
                 </groupTable>
                 <hbox id="lookupActions_1" spacing="true" visible="false">
@@ -84,7 +83,7 @@
                     <button action="lookupCancelAction"/>
                 </hbox>
             </tab>
-            <tab id="tasksCompleted" expand="tasksTableCompleted">
+            <tab id="tasksCompleted" expand="tasksTableCompleted" caption="msg://completed">
                 <groupTable id="tasksTableCompleted"
                             width="100%"
                             dataContainer="tasksDcCompleted">
@@ -103,12 +102,11 @@
                         <column id="status"/>
                     </columns>
                     <simplePagination/>
-                    <buttonsPanel id="buttonsPanel_2"
-                                  alwaysVisible="true">
-                        <button id="createBtn_2" action="tasksTableCompleted.create"/>
-                        <button id="editBtn_2" action="tasksTableCompleted.edit"/>
-                        <button id="refreshBtn_2" action="tasksTableCompleted.refresh"/>
-                        <button id="removeBtn_2" action="tasksTableCompleted.remove"/>
+                    <buttonsPanel id="buttonsPanel_2" alwaysVisible="true">
+                        <button id="createBtn_2" action="tasksTableCompleted.create" caption="msg://create"/>
+                        <button id="editBtn_2" action="tasksTableCompleted.edit" caption="msg://edit"/>
+                        <button id="refreshBtn_2" action="tasksTableCompleted.refresh" caption="msg://refresh"/>
+                        <button id="removeBtn_2" action="tasksTableCompleted.remove" caption="msg://remove"/>
                     </buttonsPanel>
                 </groupTable>
                 <hbox id="lookupActions_2" spacing="true" visible="false">

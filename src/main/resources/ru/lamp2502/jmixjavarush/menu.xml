@@ -7,6 +7,7 @@
         <item screen="Document.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.document/documentBrowse.menu"/>
         <item screen="Contract.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.contract/contractBrowse.menu"/>
         <item screen="Task_.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.task/taskBrowse.menu"/>
+        <item screen="Clas.browse" caption="msg://ru.lamp2502.jmixjavarush.screen.clas/clasBrowse.menu"/>
     </menu>
 
 </menu-config>

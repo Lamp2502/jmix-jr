@@ -28,7 +28,7 @@ public class Task {
     @Id
     private UUID id;
 
-    @OnDeleteInverse(DeletePolicy.CASCADE)
+   // @OnDeleteInverse(DeletePolicy.CASCADE)
     @JoinColumn(name = "DOCUMENT_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private Contract document;

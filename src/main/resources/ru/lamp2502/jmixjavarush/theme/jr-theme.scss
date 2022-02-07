@@ -125,23 +125,29 @@
     color: #212121;
   }
 
+  .new-fio-in-header{
+    position: absolute;
+    right: 0;
+}
+
   .fio-in-header{
     position: absolute;
-    width: 376px;
-    height: 24px;
-    right: 60px;
-    top: calc(50% - 24px/2 - 8px);
+ /*   width: 376px;
+    height: 24px;*/
+   /* right: 8px;*/
+    /*right: 76px;*/
+  /*  top: calc(50% - 24px/2 - 8px);*/
 
-    font-family: Arial;
+ /*   font-family: Arial;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 120%;
 
-    /* identical to box height, or 24px */
+    !* identical to box height, or 24px *!
     display: flex;
     align-items: center;
-    text-align: right;
+    text-align: right;*/
 
     /* White */
     color: #FFFFFF;
@@ -151,7 +157,8 @@
     position: absolute;
     width: 68px;
     height: 17px;
-    right: 138px;
+    right: 8px;
+    /*right: 138px;*/
     /*top: calc(50% - 17px/2 - 12.5px);*/
     top: 46px;
 

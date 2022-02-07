@@ -33,7 +33,7 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="documentsTable" spacing="true">
-        <filter id="filter"
+        <filter id="filter" caption="msg://filter"
                 dataLoader="documentsDl">
             <properties include=".*"/>
         </filter>
@@ -61,11 +61,11 @@
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="documentsTable.create"/>
-                <button id="editBtn" action="documentsTable.edit"/>
-                <button id="excludeBtn" action="documentsTable.exclude"/>
-                <button id="refreshBtn" action="documentsTable.refresh"/>
-                <button id="removeBtn" action="documentsTable.remove"/>
+                <button id="createBtn" action="documentsTable.create" caption="msg://create"/>
+                <button id="editBtn" action="documentsTable.edit"  caption="msg://edit"/>
+                <button id="excludeBtn" action="documentsTable.exclude" caption="msg://exclude"/>
+                <button id="refreshBtn" action="documentsTable.refresh" caption="msg://refresh"/>
+                <button id="removeBtn" action="documentsTable.remove" caption="msg://remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

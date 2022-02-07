@@ -21,6 +21,13 @@ public class Contract extends AbstractDocument {
     @Version
     private Integer version;
 
+    @Column(name = "COMPLETED")
+    private Boolean completed = false;
+
+    public Boolean getCompleted() {return completed;}
+
+    public void setCompleted(Boolean completed) {this.completed = completed;}
+
     public Integer getVersion() {return version;}
 
     public void setVersion(Integer version) {this.version = version;}

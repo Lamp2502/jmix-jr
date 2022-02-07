@@ -2,7 +2,7 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
         caption="msg://contractBrowse.caption"
-        focusComponent="contractsTable">
+        focusComponent="contractTableSheet">
     <data readOnly="true">
         <collection id="contractsDc"
                     class="ru.lamp2502.jmixjavarush.entity.document.Contract">
@@ -10,6 +10,24 @@
             <loader id="contractsDl">
                 <query>
                     <![CDATA[select e from Contract e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="contractsDcOpened"
+                    class="ru.lamp2502.jmixjavarush.entity.document.Contract">
+            <fetchPlan extends="_base"/>
+            <loader id="contractsDlOpened">
+                <query>
+                    <![CDATA[select e from Contract e where e.completed = false ]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="contractsDcCompleted"
+                    class="ru.lamp2502.jmixjavarush.entity.document.Contract">
+            <fetchPlan extends="_base"/>
+            <loader id="contractsDlCompleted">
+                <query>
+                    <![CDATA[select e from Contract e where e.completed = true ]]>
                 </query>
             </loader>
         </collection>
@@ -30,37 +48,96 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="contractsTable" spacing="true">
-        <filter id="filter"
+    <layout expand="contractTableSheet" spacing="true">
+        <filter id="filter" caption="msg://filter"
                 dataLoader="contractsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="contractsTable"
-                    width="100%"
-                    dataContainer="contractsDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="exclude" type="exclude"/>
-                <action id="refresh" type="refresh"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="createdDate"/>
-                <column id="titel"/>
-                <column id="customer"/>
-                <column id="performer"/>
-            </columns>
-            <simplePagination/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="contractsTable.create"/>
-                <button id="editBtn" action="contractsTable.edit"/>
-                <button id="excludeBtn" action="contractsTable.exclude"/>
-                <button id="refreshBtn" action="contractsTable.refresh"/>
-                <button id="removeBtn" action="contractsTable.remove"/>
-            </buttonsPanel>
-        </groupTable>
+        <tabSheet id="contractTableSheet">
+            <tab id="contractsTabAll" caption="msg://all">
+                <groupTable id="contractsTable"
+                            width="100%"
+                            dataContainer="contractsDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="exclude" type="exclude"/>
+                        <action id="refresh" type="refresh"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="createdDate"/>
+                        <column id="titel"/>
+                        <column id="customer"/>
+                        <column id="performer"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="contractsTable.create" caption="msg://create"/>
+                        <button id="editBtn" action="contractsTable.edit" caption="msg://edit"/>
+                        <button id="excludeBtn" action="contractsTable.exclude" caption="msg://exclude"/>
+                        <button id="refreshBtn" action="contractsTable.refresh" caption="msg://refresh"/>
+                        <button id="removeBtn" action="contractsTable.remove" caption="msg://remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+            <tab id="contractsTabOpened" caption="msg://opened">
+                <groupTable id="contractsTableOpened"
+                            width="100%"
+                            dataContainer="contractsDcOpened">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="exclude" type="exclude"/>
+                        <action id="refresh" type="refresh"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="createdDate"/>
+                        <column id="titel"/>
+                        <column id="customer"/>
+                        <column id="performer"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel_1" alwaysVisible="true">
+                        <button id="createBtn_1" action="contractsTableOpened.create" caption="msg://create"/>
+                        <button id="editBtn_1" action="contractsTableOpened.edit" caption="msg://edit"/>
+                        <button id="excludeBtn_1" action="contractsTableOpened.exclude" caption="msg://exclude"/>
+                        <button id="refreshBtn_1" action="contractsTableOpened.refresh" caption="msg://refresh"/>
+                        <button id="removeBtn_1" action="contractsTableOpened.remove" caption="msg://remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+            <tab id="contractsTabCompleted"  caption="msg://completed">
+                <groupTable id="contractsTableCompleted"
+                            width="100%"
+                            dataContainer="contractsDcCompleted">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="exclude" type="exclude"/>
+                        <action id="refresh" type="refresh"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="createdDate"/>
+                        <column id="titel"/>
+                        <column id="customer"/>
+                        <column id="performer"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel_2" alwaysVisible="true">
+                        <button id="createBtn_2" action="contractsTableCompleted.create" caption="msg://create"/>
+                        <button id="editBtn_2" action="contractsTableCompleted.edit" caption="msg://edit"/>
+                        <button id="excludeBtn_2" action="contractsTableCompleted.exclude" caption="msg://exclude"/>
+                        <button id="refreshBtn_2" action="contractsTableCompleted.refresh" caption="msg://refresh"/>
+                        <button id="removeBtn_2" action="contractsTableCompleted.remove" caption="msg://remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+        </tabSheet>
+
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>

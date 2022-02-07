@@ -35,6 +35,7 @@
                     <textField id="numberField" property="number"/>
                     <comboBox id="statusField" property="status"/>
                     <comboBox id="communicationTypeField" property="communicationType"/>
+                    <checkBox id="completedField" property="completed"/>
                 </column>
             </form>
         </scrollBox>
