@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.screen.lookupwidgetedit;
+package ru.lamp2502.jmixjavarush.widgets.lookupwidgetedit;
 
 import io.jmix.core.Metadata;
 import io.jmix.dashboards.model.Widget;

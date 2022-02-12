@@ -70,16 +70,14 @@
   }
 
   .photo-on-work-area {
-   /* position: absolute;*/
-/*    height: 125px;
-    width: 125px;*/
+    position: absolute;
+    height: 125px;
+    width: 125px;
 
-
-
-  /*  border-radius: 50%;  !* Скругление углов изображения *!
-    border: 5px solid #fff; !* Цвет и ширину рамки *!
-    box-shadow: 2px 1px 5px #999999; !* Цвет и размер тени *!*/
-    /*background: #EFEFEF;*/
+    border-radius: 50%;  /* Скругление углов изображения */
+    border: 5px solid #fff; /* Цвет и ширину рамки */
+    box-shadow: 2px 1px 5px #999999; /* Цвет и размер тени */
+    background: #EFEFEF;
   }
 
 

@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.screen.artwidget;
+package ru.lamp2502.jmixjavarush.widgets.artwidget;
 
 import io.jmix.core.DataManager;
 import io.jmix.dashboards.model.Widget;

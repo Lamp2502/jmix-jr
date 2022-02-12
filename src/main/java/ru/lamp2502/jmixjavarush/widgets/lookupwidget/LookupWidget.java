@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.screen.lookupwidget;
+package ru.lamp2502.jmixjavarush.widgets.lookupwidget;
 
 import io.jmix.dashboards.model.DashboardModel;
 import io.jmix.dashboards.model.Widget;

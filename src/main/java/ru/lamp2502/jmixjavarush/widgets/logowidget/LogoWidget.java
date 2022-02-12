@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.screen.logowidget;
+package ru.lamp2502.jmixjavarush.widgets.logowidget;
 
 import io.jmix.dashboardsui.annotation.DashboardWidget;
 import io.jmix.ui.screen.ScreenFragment;

@@ -1,4 +1,4 @@
-package ru.lamp2502.jmixjavarush.screen.randomjokewidget;
+package ru.lamp2502.jmixjavarush.widgets.randomjokewidget;
 
 import io.jmix.dashboardsui.annotation.DashboardWidget;
 import io.jmix.dashboardsui.event.DashboardEvent;
@@ -9,7 +9,6 @@ import io.jmix.ui.screen.Subscribe;
 import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiDescriptor;
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
