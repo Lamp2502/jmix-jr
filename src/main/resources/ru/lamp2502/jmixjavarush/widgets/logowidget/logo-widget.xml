@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment">
+    <layout>
+        <image>
+            <resource>
+                <classpath path="ru/lamp2502/jmixjavarush/theme/branding/app-icon-login.svg"/>
+            </resource>
+        </image>
+    </layout>
+</fragment>

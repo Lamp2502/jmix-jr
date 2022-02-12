@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment">
+    <layout spacing="true">
+        <hbox id="lookupIdBox"
+              spacing="true">
+            <label width="85px"
+                   value="lookupId"/>
+            <comboBox id="lookupIdComboBox"
+                      nullOptionVisible="false"
+                      required="true"/>
+        </hbox>
+    </layout>
+</fragment>

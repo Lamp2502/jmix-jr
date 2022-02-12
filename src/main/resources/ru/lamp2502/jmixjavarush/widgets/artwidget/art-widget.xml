@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment">
+    <data>
+        <instance id="petDc" class="ru.lamp2502.jmixjavarush.entity.User">
+            <fetchPlan extends="_base"/>
+            <loader id="petDl"/>
+        </instance>
+    </data>
+    <layout>
+        <image id="pokemonImage"
+               dataContainer="petDc"
+               property="image"
+               align="MIDDLE_LEFT"
+               scaleMode="SCALE_DOWN"
+               css="position: absolute; top:48px; left:40px; max-width:125px; max-height:125px;
+                               display: block; border-radius: 50%; border: 2px solid #fff;
+                               box-shadow: 2px 1px 5px #999999;"/>
+    </layout>
+</fragment>
