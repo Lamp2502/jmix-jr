@@ -5,10 +5,7 @@
     <data>
         <instance id="taskDc"
                   class="ru.lamp2502.jmixjavarush.entity.Task">
-            <fetchPlan extends="_base">
-                <property name="document" fetchPlan="_base"/>
-                <property name="administrator" fetchPlan="_base"/>
-            </fetchPlan>
+            <fetchPlan extends="_base"/>
             <loader/>
         </instance>
     </data>
@@ -30,23 +27,7 @@
     <layout spacing="true" expand="editActions">
         <form id="form" dataContainer="taskDc">
             <column width="350px">
-                <dateField id="performBeforeField" property="performBefore"/>
-                <entityPicker id="documentField" property="document">
-                    <actions>
-                        <action id="entityLookup" type="entity_lookup"/>
-                        <action id="entityClear" type="entity_clear"/>
-                    </actions>
-                </entityPicker>
-                <comboBox id="contragentField" property="contragent"/>
-                <entityPicker id="administratorField" property="administrator">
-                    <actions>
-                        <action id="entityLookup" type="entity_lookup"/>
-                        <action id="entityClear" type="entity_clear"/>
-                    </actions>
-                </entityPicker>
-                <comboBox id="actionsField" property="actions"/>
-                <comboBox id="statusField" property="status"/>
-                <checkBox id="completedField" property="completed"/>
+                <textField id="titelField" property="titel"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

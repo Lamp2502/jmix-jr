@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment">
+    <layout>
+        <hbox id="hBox" width="AUTO" spacing="true" expand="pokemonPicker">
+            <label value="msg://ru.lamp2502.jmixjavarush.entity/User.username"/>
+            <entityPicker id="pokemonPicker"
+                          metaClass="User"
+                          property="username"
+                          required="true"/>
+        </hbox>
+    </layout>
+</fragment>

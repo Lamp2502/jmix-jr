@@ -5,6 +5,6 @@ import ru.lamp2502.jmixjavarush.entity.Task;
 
 @UiController("Task_.browse")
 @UiDescriptor("task-browse.xml")
-@LookupComponent("tasksTableSheet")
+@LookupComponent("tasksTable")
 public class TaskBrowse extends StandardLookup<Task> {
 }

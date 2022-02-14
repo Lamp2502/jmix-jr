@@ -15,10 +15,10 @@ import ru.lamp2502.jmixjavarush.entity.User;
 
 @UiController("sample_ArtWidget")
 @UiDescriptor("art-widget.xml")
-@DashboardWidget(name = "Pokemon Art")
+@DashboardWidget(name = "Pokemon Art", editFragmentId = "sample_PokemonWidgetEditor")
 public class ArtWidget extends ScreenFragment {
 
-    public static final String INIT_POKEMON = "admin";
+    public static final String INIT_POKEMON = "246736KX";
 
     @Autowired
     private InstanceContainer<User> petDc;

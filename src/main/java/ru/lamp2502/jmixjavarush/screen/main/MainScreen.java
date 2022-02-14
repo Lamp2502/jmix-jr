@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.lamp2502.jmixjavarush.entity.User;
 import ru.lamp2502.jmixjavarush.screen.contract.ContractBrowse;
 import ru.lamp2502.jmixjavarush.screen.document.DocumentBrowse;
-import ru.lamp2502.jmixjavarush.screen.task.TaskBrowse;
 
 @UiController("MainScreen")
 @UiDescriptor("main-screen.xml")
@@ -49,8 +48,8 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
     @Autowired
     private InstanceContainer<User> userDc;
 
-    @Autowired
-    private Label<String> fioInMainFon;
+  //  @Autowired
+   // private Label<String> fioInMainFon;
     @Autowired
     private Label<String> fioInHeader;
     @Autowired
@@ -88,14 +87,14 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
                 .show();
     }
 
-    @Subscribe("tasks")
+/*    @Subscribe("tasks")
     public void onScreenButtonClickForTasks(Button.ClickEvent event) {
         screenBuilders.screen(this)
                 .withScreenClass(TaskBrowse.class)
                 .withOpenMode(OpenMode.THIS_TAB)
                 .build()
                 .show();
-    }
+    }*/
 
 
     @Install(to = "userDl", target = Target.DATA_LOADER)
@@ -107,7 +106,7 @@ public class MainScreen extends Screen implements Window.HasWorkArea {
         String str = user.getLastName() != null ? user.getLastName() + " " : "";
         str += user.getFirstName() != null ? user.getFirstName() + " " : "";
         str += user.getPatronymic() != null ? user.getPatronymic() + " " : "";
-        fioInMainFon.setValue(str);
+   //     fioInMainFon.setValue(str);
         fioInHeader.setValue(str);
         workPositionHeader.setValue(user.getPosition());
         workPlaceHeader.setValue(user.getWorkplace());

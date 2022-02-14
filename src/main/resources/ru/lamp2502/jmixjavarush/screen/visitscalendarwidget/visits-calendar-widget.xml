@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/ui/fragment">
+    <data>
+   <!--     <collection id="taskDc" class="ru.lamp2502.jmixjavarush.entity.Task">
+            <loader id="taskDl">
+                <query>select t from Task_ t  </query>
+            </loader>
+        </collection>-->
+    </data>
+    <layout expand="vBox">
+        <vbox id="vBox" expand="calendar">
+            <hbox id="hBox" width="100%" align="MIDDLE_CENTER">
+                <label value="Month" align="BOTTOM_LEFT" height="100%"/>
+                <datePicker id="monthPicker" width="100%" height="100%" resolution="MONTH"/>
+            </hbox>
+            <calendar id="calendar" caption="100%" height="100%" width="100%" startDate="2020-02-14"/>
+        </vbox>
+    </layout>
+</fragment>

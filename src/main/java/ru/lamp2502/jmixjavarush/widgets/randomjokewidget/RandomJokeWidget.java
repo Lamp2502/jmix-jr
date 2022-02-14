@@ -1,8 +1,10 @@
 package ru.lamp2502.jmixjavarush.widgets.randomjokewidget;
 
 import io.jmix.dashboardsui.annotation.DashboardWidget;
+import io.jmix.dashboardsui.annotation.WidgetParam;
 import io.jmix.dashboardsui.event.DashboardEvent;
 import io.jmix.dashboardsui.widget.RefreshableWidget;
+import io.jmix.ui.WindowParam;
 import io.jmix.ui.component.TextArea;
 import io.jmix.ui.screen.ScreenFragment;
 import io.jmix.ui.screen.Subscribe;
@@ -24,11 +26,17 @@ public class RandomJokeWidget extends ScreenFragment implements RefreshableWidge
     @Inject
     private TextArea<String> randomJoke;
 
+    @WindowParam(name = "font-size")
+    @WidgetParam
+    private String fontSize;
 
     private int errorCount = 0;
 
     @Subscribe
     private void onAfterInit(AfterInitEvent event) {
+        if(fontSize!=null) {
+            randomJoke.addStyleName(fontSize);
+        }
         randomJoke.setValue(getNewJoke());
     }
 

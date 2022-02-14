@@ -1,5 +1,6 @@
 <window xmlns="http://jmix.io/schema/ui/window"
         caption="msg://application.caption"
+        xmlns:dashboard="http://jmix.io/schema/dashboards/ui"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition">
     <data>
         <instance id="userDc" class="ru.lamp2502.jmixjavarush.entity.User">
@@ -105,34 +106,47 @@
 
             <workArea id="workArea" stylename="work-area">
                 <initialLayout spacing="true" margin="true" expand="editActions">
-                    <flowBox stylename="photo-on-work-area">
-                        <image id="image" dataContainer="userDc" property="image" align="MIDDLE_LEFT"
-                               scaleMode="SCALE_DOWN"
-                               css="position: absolute; top:48px; left:40px; max-width:125px; max-height:125px;
-                               display: block; border-radius: 50%; border: 2px solid #fff;
-                               box-shadow: 2px 1px 5px #999999;"/>
-                        <label id="fioInMainFon" stylename="fio-in-main-fon"/>
-                        <label id="workplaceInMainFon" stylename="workplace-in-main-fon"
-                               dataContainer="userDc" property="workplace" value="workplace"/>
-                        <label id="positionMainFon" stylename="position-in-main-fon"
-                               dataContainer="userDc" property="position"/>
-                    </flowBox>
+                    <vbox id="dashBox" expand="dash1" spacing="true">
+                        <dashboard:dashboard id="dash1"
+                                             code="dash"
+                                             timerDelay="3"
+                                             width="100%"
+                        >
+                        </dashboard:dashboard>
+                    </vbox>
 
-                    <form id="form" dataContainer="userDc" css="position: absolute; top:240px; left:40px">
-                        <column width="350px">
-                            <textField id="firstNameField" property="firstName"/>
-                            <textField id="lastNameField" property="lastName"/>
-                            <textField id="cellphoneField" property="cellphone"/>
-                            <textField id="emailField" property="email"/>
-                            <textField id="workphoneField" property="workphone"/>
-                            <textField id="usernameField" property="username" editable="false"/>
-                            <passwordField id="passwordField"
-                                           caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
-                                           visible="false"/>
-                            <passwordField id="confirmPasswordField" caption="msg://confirmPassword"
-                                           required="true" visible="false"/>
-                        </column>
-                    </form>
+                    <!--
+                                        <flowBox stylename="photo-on-work-area">
+                                            <image id="image" dataContainer="userDc" property="image" align="MIDDLE_LEFT"
+                                                   scaleMode="SCALE_DOWN"
+                                                   css="position: absolute; top:48px; left:40px; max-width:125px; max-height:125px;
+                                                   display: block; border-radius: 50%; border: 2px solid #fff;
+                                                   box-shadow: 2px 1px 5px #999999;"/>
+                                            <label id="fioInMainFon" stylename="fio-in-main-fon"/>
+                                            <label id="workplaceInMainFon" stylename="workplace-in-main-fon"
+                                                   dataContainer="userDc" property="workplace" value="workplace"/>
+                                            <label id="positionMainFon" stylename="position-in-main-fon"
+                                                   dataContainer="userDc" property="position"/>
+                                        </flowBox>
+
+
+
+                                        <form id="form" dataContainer="userDc" css="position: absolute; top:240px; left:40px">
+                                            <column width="350px">
+                                                <textField id="firstNameField" property="firstName"/>
+                                                <textField id="lastNameField" property="lastName"/>
+                                                <textField id="cellphoneField" property="cellphone"/>
+                                                <textField id="emailField" property="email"/>
+                                                <textField id="workphoneField" property="workphone"/>
+                                                <textField id="usernameField" property="username" editable="false"/>
+                                                <passwordField id="passwordField"
+                                                               caption="msg://ru.lamp2502.jmixjavarush.entity/User.password" required="true"
+                                                               visible="false"/>
+                                                <passwordField id="confirmPasswordField" caption="msg://confirmPassword"
+                                                               required="true" visible="false"/>
+                                            </column>
+                                        </form>
+                    -->
                     <hbox id="editActions" spacing="true" css="position: absolute; top:550px; left:40px">
                         <button id="commitAndCloseBtn" action="windowCommitAndClose" visible="false"/>
                         <button id="closeBtn" action="windowClose" visible="false"/>
